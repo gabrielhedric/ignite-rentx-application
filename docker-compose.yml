@@ -6,10 +6,10 @@ services:
     container_name: database_ignite
     restart: always
     ports: 
-      - 5432:5432
+      - 5432
     environment: 
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=ignite
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=rentx
     volumes: 
       - pgdata:/data/postgres
@@ -17,7 +17,7 @@ services:
     build: .
     container_name: rentx
     ports:
-      - 3333:3333
+      - 3334:3334
     volumes: 
       - .:/usr/app
       - /usr/src/app/node_modules
